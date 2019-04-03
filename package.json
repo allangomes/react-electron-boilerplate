@@ -1,0 +1,38 @@
+{
+  "name": "reactron",
+  "description": "React Create App + Electron without Eject Boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "electron": "^4.1.3",
+    "electron-builder": "^20.39.0",
+    "react-app-rewired": "^2.1.1",
+    "react-scripts": "2.1.8",
+    "concurrently": "^4.1.0",
+    "wait-on": "^3.2.0",
+    "node-sass": "^4.11.0"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "electron-log": "^3.0.4",
+    "electron-updater": "^4.0.6",
+    "node-notifier": "^5.4.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "ts-optchain": "^0.1.3"
+  },
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "desktop": "concurrently \"PLATFORM=desktop npm start\" \"wait-on http://localhost:3000 && cross-env DEV=true electron .\"",
+    "pack": "cross-env PLATFORM=desktop npm run build && build --win --mac --linux --x64"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

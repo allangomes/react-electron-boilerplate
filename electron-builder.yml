@@ -1,0 +1,8 @@
+appId: com.allangomes.reactron
+files:
+  - ./build/**/*
+  - node_modules/**/*
+  - package.json
+mac:
+  identity: null
+  compression: store
